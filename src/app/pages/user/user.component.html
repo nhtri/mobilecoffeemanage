@@ -1,0 +1,132 @@
+<div class=" content" [formGroup]="userform">
+
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class=" card">
+        <div class=" card-header">
+          <h4 class=" title" style="color: orangered; font-weight: bold;">SẢN PHẨM</h4>
+        </div>
+        <div class=" card-body">
+
+          <div class=" row">
+            <div class=" col-md-5 pr-md-1">
+              <div class=" form-group">
+                <label> Category</label> <label style="color: #ec250d;"> *</label>
+                <input class=" form-control" placeholder="Category" type="text" formControlName="mawifi" />
+              </div>
+            </div>
+            <div class=" col-md-3 px-md-1">
+              <div class=" form-group">
+                <label> Name </label> <label style="color: #ec250d;"> *</label>
+                <input class=" form-control" placeholder="Name" type="text" formControlName="sdtsim" />
+              </div>
+            </div>
+            <div class=" col-md-3 px-md-1">
+              <div class=" form-group">
+                <label> Summary</label> <label style="color: #ec250d;"> *</label>
+                <input class=" form-control" placeholder="Mã Sim" type="text" formControlName="masim" />
+              </div>
+            </div>
+
+          </div>
+          <div class=" row">
+            <div class=" col-md-6 pr-md-1">
+              <div class=" form-group">
+                <label> Remarks </label> 
+                <input class=" form-control" placeholder="Remarks" type="text" formControlName="hoten" />
+              </div>
+            </div>
+
+            <div class=" col-md-6 pl-md-1">
+              <div class=" form-group">
+                <label> Guarantee </label>
+                <input class=" form-control" placeholder="Guarantee" type="email" formControlName="facebook" />
+              </div>
+            </div>
+          </div>
+          
+
+          <div class=" row">
+            <div class=" col-md-4 pr-md-1">
+              <div class=" form-group">
+                <label> Price </label>
+                <input class=" form-control" placeholder="Price" type="text" formControlName="giacuoc" />
+              </div>
+            </div>
+
+
+          </div>
+          <div class=" row">
+            <div class=" col-md-4 pr-md-1">
+              <div class=" form-group">
+                <label> Video </label>
+                <input class=" form-control" placeholder="Video" type="text" formControlName="giacuoc" />
+              </div>
+            </div>
+
+
+          </div>
+          <div class=" row">
+            <div class=" col-md-8 pr-md-1">
+              <div class=" form-group">
+                <label> Image </label>
+                <input class=" form-control" placeholder="Image" type="text" formControlName="giacuoc" />
+              </div>
+            </div>
+
+
+          </div>
+
+          <div class=" row">
+            <div class=" col-md-12">
+              <div class=" form-group">
+                <label> Details </label>
+                <textarea class=" form-control" cols="80" placeholder="Details" rows="4" formControlName="ghichu">
+
+</textarea>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class=" card-footer" [hidden]="isDisable">
+          <button class=" btn btn-fill btn-danger" type="submit" (click)="submit()" [hidden]="isDisable">Save</button>
+
+          <button class=" btn " style="background:rgba(224, 46, 22, 0.6)" (click)="cancel()"
+            [hidden]="isDisable">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <!-- <div class=" col-md-4">
+      <div class=" card card-user">
+        <div class=" card-body">
+          <p class=" card-text"></p>
+          <div class=" author">
+            <div class=" block block-one"></div>
+            <div class=" block block-two"></div>
+
+
+            <a href="javascript:void(0)">
+              <img />
+
+              <h4 class=" title">Họ Tên: {{hoten}}</h4>
+            </a>
+
+          </div>
+          <div class=" card-description">
+            Ghi Chú: {{ghichu}}
+          </div>
+        </div>
+        <div class=" card-footer">
+          <div class=" button-container">
+            <button class=" btn btn-icon btn-round btn-facebook">
+              <a class=" fab fa-facebook" href="{{facebook}}"> </a>
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </div>
+
+</div>
