@@ -30,6 +30,13 @@ export class UserComponent implements OnInit {
   guarantee='';
   email='';
   device = [];
+arrayImage = [];
+image1='';
+image2='';
+image3='';
+image4='';
+image5='';
+image6='';
 
   constructor(
 
@@ -68,18 +75,51 @@ this.categories =  [
   }
 
   submit() {
+
+this.arrayImage = this.image.split(',')
+if(this.arrayImage[0]){
+  this.image1=this.arrayImage[0]
+}
+else this.image1 = null
+
+if(this.arrayImage[1]){
+  this.image2=this.arrayImage[1]
+}
+else this.image2 = null
+
+if(this.arrayImage[2]){
+  this.image3=this.arrayImage[2]
+}
+else this.image3 = null
+
+if(this.arrayImage[3]){
+  this.image4=this.arrayImage[3]
+}
+else this.image4 = null
+
+if(this.arrayImage[4]){
+  this.image5=this.arrayImage[4]
+}
+else this.image5 = null
+
+if(this.arrayImage[5]){
+  this.image6=this.arrayImage[5]
+}
+else this.image6 = null
+
+console.log(this.arrayImage)
     this.device = [
       this.category,
       this.summary,
       this.details,
       this.price,
-      this.image,
-      null,
+      this.image1,
+      this.image2,
       this.video,
-      null,
-      null,
-      null,
-      null,
+      this.image3,
+      this.image4,
+      this.image5,
+      this.image6,
       // DEFAULT,
 this.name,
 this.remarks,
