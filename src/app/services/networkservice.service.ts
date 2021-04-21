@@ -31,7 +31,10 @@ export class NetworkserviceService {
     return this.httpClient.get<any>(getAllDeviceAPI);    
   }
 
-
+  deleteDevice(data): Observable<any>  {
+    const deleteDeviceAPI = `${NETWORK.API.Device}/${data}`;
+    return this.httpClient.delete(deleteDeviceAPI)  
+  }
 
 
   getAllUser() {
@@ -62,6 +65,15 @@ export class NetworkserviceService {
     return this.httpClient.put<any>(updateAllUserAPI, data,this.httpOptions)  
   }
 
-  
+
+  updateAllDevices(data): Observable<any>  {
+    const updateAllDevicesAPI = `${NETWORK.API.UpdateDevice}`;
+    return this.httpClient.put<any>(updateAllDevicesAPI, data,this.httpOptions)  
+  }
+
+  postAllDevice(data): Observable<any>  {
+    const postAllDeviceAPI = `${NETWORK.API.Device}`;
+    return this.httpClient.post<any>(postAllDeviceAPI, data,this.httpOptions)  
+  }
 
 }

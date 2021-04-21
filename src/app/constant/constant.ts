@@ -9,6 +9,8 @@ export const NETWORK = {
         WiFiCongtacvien: HOST + 'wificongtacvien',
         WiFiThanhtoan: HOST + 'wifithanhtoan',
         WiFiTamngung: HOST + 'wifitamngung',
-        Detail:HOST+'detail'
+        Detail:HOST+'detail',
+        Device:HOST+'device',
+        UpdateDevice:HOST+'updateDevice'
     }
 };

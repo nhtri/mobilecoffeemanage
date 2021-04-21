@@ -39,13 +39,14 @@ export class DashboardComponent implements OnInit {
   categoryRow: any = ''
   detailsRow: any = ''
   guaranteeRow: any = ''
-  imageRow: any = ''
+  imageRow1: any = ''
   nameRow: any = ''
   priceRow: any = ''
   remarksRow: any = ''
   summaryRow: any = ''
   videoRow: any = ''
-
+  idRow:any=''
+deviceUpdate=[]
   constructor(
     private networkserviceService: NetworkserviceService,
   ) {
@@ -83,11 +84,21 @@ export class DashboardComponent implements OnInit {
 
 
   onChangeCategory(category) {
-    this.networkserviceService.getAllDevice().subscribe(val =>
+    if(category=='all'){
+      this.networkserviceService.getAllDevice().subscribe(val =>
 
-      this.data = val.filter(val => val.category == category)
+        this.data = val
+  
+      )
+    }
+    else{
+      this.networkserviceService.getAllDevice().subscribe(val =>
 
-    )
+        this.data = val.filter(val => val.category == category)
+  
+      )
+    }
+    
   }
 
   onRowEditInit(val) {
@@ -95,12 +106,13 @@ export class DashboardComponent implements OnInit {
     this.categoryRow = val.category;
     this.detailsRow = val.details;
     this.guaranteeRow = val.guarantee;
-    this.imageRow = val.image;
+    this.imageRow1 = val.image1;
     this.nameRow = val.name;
     this.priceRow = val.price;
     this.remarksRow = val.remarks;
     this.summaryRow = val.summary;
     this.videoRow = val.video;
+    this.idRow=val.id;
   }
 
   exportExcel() {
@@ -125,9 +137,42 @@ export class DashboardComponent implements OnInit {
 
 
   save(){
-    console.log(this.categoryRow)
+    this.deviceUpdate = [this.categoryRow,
+    this.summaryRow,
+    this.detailsRow,
+    this.priceRow, this.imageRow1, null, this.videoRow, null, null, null, null, this.nameRow, this.remarksRow, this.guaranteeRow, null,this.idRow
+    ]
+    this.networkserviceService.updateAllDevices(this.deviceUpdate).subscribe(
+      data => {
+        alert("Lưu Thành Công");
+
+        console.log("POST Request is successful ", data);
+        location.reload();
+      },
+      error => {
+
+        console.log("Error", error);
+
+      })
   }
   cancel() {
     this.displayDialog = false;
+  }
+
+  onRowDelete(val,index){
+    let isDel = confirm("Bạn có muốn xóa " + val.name + " không?");
+    if (isDel == true) {
+      this.networkserviceService.deleteDevice(val.id).subscribe(
+        data => {
+          alert("Xóa Thành Công");
+          location.reload();
+          console.log("POST Request is successful ", data);
+        },
+        error => {
+
+          console.log("Error", error);
+
+        })
+    }
   }
 }

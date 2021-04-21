@@ -53,9 +53,9 @@
                   <button pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(rowData)" class="p-button-rounded p-button-text"></button>
                </td>
                 <td style="text-align:center">
-                  <button pButton type="button" pCancelEditableRow class="ui-button-danger"
+                  <button style="background-color: orangered;" pButton type="button" pCancelEditableRow icon="pi pi-trash" class="ui-button-danger"
                       (click)="onRowDelete(rowData,ri)"
-                      style="width: 35px !important;height: 20px !important; margin-right: 4px;">Del</button>
+                      class="p-button-rounded p-button-text"></button>
               </td>
               </tr>
             </ng-template>
@@ -78,11 +78,10 @@
           <label style="margin-top: 15px;margin-right: 10px;"> Video:  </label>
           <input type="text" pInputText [(ngModel)]="videoRow"style="width: 320px;"/> <br />
           <label style="margin-top: 15px;margin-right: 10px;"> Image:  </label>
-          <input type="text" pInputText [(ngModel)]="imageRow"style="width: 320px;"/> <br />
+          <input type="text" pInputText [(ngModel)]="imageRow1"style="width: 320px;"/> <br />
           <label style="margin-top: 15px;margin-right: 10px;"> Details:</label>
-          <textarea pInputTextarea [(ngModel)]="detailsRow" style="width: 420px;"></textarea>
+          <textarea pInputTextarea [(ngModel)]="detailsRow" style="width: 420px;" rows="3"></textarea>
 
-          <br />
           <br />
           <p-footer>
             <div class="ui-dialog-buttonpane ui-helper-clearfix">
