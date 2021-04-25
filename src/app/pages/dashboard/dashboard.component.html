@@ -50,8 +50,10 @@
 
               
                 <td style="text-align:center">
-                  <button pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(rowData)" class="p-button-rounded p-button-text"></button>
-               </td>
+                  <!-- <button routerLink="/detail" [state]="rowData" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(rowData)" class="p-button-rounded p-button-text"></button> -->
+                  <button (click)="onRowEditInit(rowData)" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil"  class="p-button-rounded p-button-text"></button>
+
+                </td>
                 <td style="text-align:center">
                   <button style="background-color: orangered;" pButton type="button" pCancelEditableRow icon="pi pi-trash" class="ui-button-danger"
                       (click)="onRowDelete(rowData,ri)"

@@ -13,7 +13,7 @@ import { UserComponent } from "../../pages/user/user.component";
 import { TablesComponent } from "../../pages/tables/tables.component";
 import { TypographyComponent } from "../../pages/typography/typography.component";
 import { WifiComponent } from "../../pages/wifi/wifi.component"
-import { RtlComponent } from "../../pages/rtl/rtl.component";
+// import { RtlComponent } from "../../pages/rtl/rtl.component";
 import { CongtacvienComponent } from "../../pages/congtacvien/congtacvien.component";
 
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
@@ -26,6 +26,7 @@ import {DropdownModule} from 'primeng/dropdown';
 import { ChuatracocComponent } from 'src/app/pages/chuatracoc/chuatracoc.component';
 import { WifidoicaplaisimComponent } from 'src/app/pages/wifidoicaplaisim/wifidoicaplaisim.component';
 
+import {FileUploadModule} from 'primeng/fileupload';
 @NgModule({
   imports: [
     CommonModule,
@@ -38,7 +39,8 @@ import { WifidoicaplaisimComponent } from 'src/app/pages/wifidoicaplaisim/wifido
     ReactiveFormsModule,
     InputSwitchModule,
     DialogModule,
-    DropdownModule
+    DropdownModule,
+    FileUploadModule
   ],
   declarations: [
     DashboardComponent,
@@ -51,7 +53,7 @@ import { WifidoicaplaisimComponent } from 'src/app/pages/wifidoicaplaisim/wifido
     CongtacvienComponent,
     ChuatracocComponent,
     WifidoicaplaisimComponent,
-     RtlComponent
+    //  RtlComponent
   ]
 })
 export class AdminLayoutModule { }

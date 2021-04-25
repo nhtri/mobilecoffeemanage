@@ -5,6 +5,7 @@ import { network } from 'src/app/components/model/network';
 import { from } from 'rxjs';
 import * as XLSX from 'xlsx';
 import * as FileSaver from 'file-saver';
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-dashboard",
@@ -58,7 +59,7 @@ image6='';
 
 
   constructor(
-    private networkserviceService: NetworkserviceService,
+    private networkserviceService: NetworkserviceService, private router:Router
   ) {
 
   }
@@ -111,18 +112,22 @@ image6='';
     
   }
 
-  onRowEditInit(val) {
-    this.displayDialog = true;
-    this.categoryRow = val.category;
-    this.detailsRow = val.details;
-    this.guaranteeRow = val.guarantee;
-    this.imageRow1 = val.image1 + ',' + val.image2 + ',' + val.image3+ ',' + val.image4+ ',' + val.image5+ ',' + val.image6;
-    this.nameRow = val.name;
-    this.priceRow = val.price;
-    this.remarksRow = val.remarks;
-    this.summaryRow = val.summary;
-    this.videoRow = val.video;
-    this.idRow=val.id;
+  // onRowEditInit(val) {
+  //   this.displayDialog = true;
+  //   this.categoryRow = val.category;
+  //   this.detailsRow = val.details;
+  //   this.guaranteeRow = val.guarantee;
+  //   this.imageRow1 = val.image1 + ',' + val.image2 + ',' + val.image3+ ',' + val.image4+ ',' + val.image5+ ',' + val.image6;
+  //   this.nameRow = val.name;
+  //   this.priceRow = val.price;
+  //   this.remarksRow = val.remarks;
+  //   this.summaryRow = val.summary;
+  //   this.videoRow = val.video;
+  //   this.idRow=val.id;
+  // }
+
+  onRowEditInit(rowData){
+    this.router.navigate(['/user'], { state: rowData });
   }
 
   exportExcel() {
