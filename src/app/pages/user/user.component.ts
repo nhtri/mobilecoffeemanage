@@ -134,53 +134,95 @@ export class UserComponent implements OnInit {
   submit() {
 
     if (this.editData.id) {
+      if (this.arrayImage.length > 0) {
+        if (this.image1) this.arrayImage.push(this.image1.replace('./assets/images/', ''))
+        if (this.image2) this.arrayImage.push(this.image2.replace('./assets/images/', ''))
+        if (this.image3) this.arrayImage.push(this.image3.replace('./assets/images/', ''))
+        if (this.image4) this.arrayImage.push(this.image4.replace('./assets/images/', ''))
+        if (this.image5) this.arrayImage.push(this.image5.replace('./assets/images/', ''))
+        if (this.image6) this.arrayImage.push(this.image6.replace('./assets/images/', ''))
+      
+    
+
+        if (this.arrayImage[0]) {
+          this.image1 = './assets/images/' + this.arrayImage[0]
+        }
+        else this.image1 = null
+
+        if (this.arrayImage[1]) {
+          this.image2 = './assets/images/' + this.arrayImage[1]
+        }
+        else this.image2 = null
+
+        if (this.arrayImage[2]) {
+          this.image3 = './assets/images/' + this.arrayImage[2]
+        }
+        else this.image3 = null
+
+        if (this.arrayImage[3]) {
+          this.image4 = './assets/images/' + this.arrayImage[3]
+        }
+        else this.image4 = null
+
+        if (this.arrayImage[4]) {
+          this.image5 = './assets/images/' + this.arrayImage[4]
+        }
+        else this.image5 = null
+
+        if (this.arrayImage[5]) {
+          this.image6 = './assets/images/' + this.arrayImage[5]
+        }
+        else this.image6 = null
+ 
+      }
+
       this.deviceUpdate = [this.editData.category,
-        this.summary,
-        this.details,
-        this.price, this.image1, this.image2, this.video, this.image3, this.image4, this.image5, this.image6, this.name, this.remarks, this.guarantee, null,this.editData.id
-        ]
-        this.networkserviceService.updateAllDevices(this.deviceUpdate).subscribe(
-          data => {
-            alert("Lưu Thành Công");
-    
-            console.log("POST Request is successful ", data);
-            this.router.navigateByUrl('dashboard')
-          },
-          error => {
-    
-            console.log("Error", error);
-    
-          })
-     }
+      this.summary,
+      this.details,
+      this.price, this.image1, this.image2, this.video, this.image3, this.image4, this.image5, this.image6, this.name, this.remarks, this.guarantee, null, this.editData.id
+      ]
+      this.networkserviceService.updateAllDevices(this.deviceUpdate).subscribe(
+        data => {
+          alert("Lưu Thành Công");
+
+          console.log("POST Request is successful ", data);
+          this.router.navigateByUrl('dashboard')
+        },
+        error => {
+
+          console.log("Error", error);
+
+        })
+    }
     else {
       // this.arrayImage = this.image.split(',')
       if (this.arrayImage[0]) {
-        this.image1 = './assets/images/'+this.arrayImage[0]
+        this.image1 = './assets/images/' + this.arrayImage[0]
       }
       else this.image1 = null
 
       if (this.arrayImage[1]) {
-        this.image2 = './assets/images/'+this.arrayImage[1]
+        this.image2 = './assets/images/' + this.arrayImage[1]
       }
       else this.image2 = null
 
       if (this.arrayImage[2]) {
-        this.image3 = './assets/images/'+this.arrayImage[2]
+        this.image3 = './assets/images/' + this.arrayImage[2]
       }
       else this.image3 = null
 
       if (this.arrayImage[3]) {
-        this.image4 = './assets/images/'+this.arrayImage[3]
+        this.image4 = './assets/images/' + this.arrayImage[3]
       }
       else this.image4 = null
 
       if (this.arrayImage[4]) {
-        this.image5 = './assets/images/'+this.arrayImage[4]
+        this.image5 = './assets/images/' + this.arrayImage[4]
       }
       else this.image5 = null
 
       if (this.arrayImage[5]) {
-        this.image6 = './assets/images/'+this.arrayImage[5]
+        this.image6 = './assets/images/' + this.arrayImage[5]
       }
       else this.image6 = null
 
@@ -274,7 +316,7 @@ export class UserComponent implements OnInit {
     for (let file of event.files) {
       this.uplo = file;
       this.uploadFileToActivity();
-this.arrayImage.push(file.name)
+      this.arrayImage.push(file.name)
 
     }
     alert('Upload Thành Công');
@@ -290,22 +332,22 @@ this.arrayImage.push(file.name)
   }
 
 
-  deleteImage6(image6Path){
+  deleteImage6(image6Path) {
     this.image6 = null
   }
-  deleteImage5(image6Path){
+  deleteImage5(image6Path) {
     this.image5 = null
   }
-  deleteImage4(image6Path){
+  deleteImage4(image6Path) {
     this.image4 = null
   }
-  deleteImage3(image6Path){
+  deleteImage3(image6Path) {
     this.image3 = null
   }
-  deleteImage2(image6Path){
+  deleteImage2(image6Path) {
     this.image2 = null
   }
-  deleteImage1(image6Path){
+  deleteImage1(image6Path) {
     this.image1 = null
   }
 
