@@ -28,12 +28,15 @@ export class UserComponent implements OnInit {
   price = '';
   image = '';
   video = '';
+  videoPath = '';
+  videoPathName = '';
   name = '';
   remarks = '';
   guarantee = '';
   email = '';
   device = [];
   arrayImage = [];
+  arrayVideo=''
   image1 = '';
   image1Path = '';
   image1PathName = '';
@@ -57,6 +60,7 @@ export class UserComponent implements OnInit {
   fileToUpload: File = null;
 
   uplo: File
+  uploVideo: File
 
   data: any
 
@@ -94,7 +98,9 @@ export class UserComponent implements OnInit {
       this.video = this.editData.video
       this.image1 = this.editData.image1
       this.image1Path = 'http://tonylemobile.com' + this.image1
+      this.videoPath = 'http://tonylemobile.com' + this.video
       this.image1PathName = this.image1Path.replace('http://tonylemobile.com./assets/images/', '')
+      this.videoPathName = this.videoPath.replace('http://tonylemobile.com./assets/images/', '')
       console.log(this.image1Path)
       this.image2 = this.editData.image2
       this.image2Path = 'http://tonylemobile.com' + this.image2
@@ -331,10 +337,33 @@ export class UserComponent implements OnInit {
     });
   }
 
+  onUploadVideo(event) {
+    for (let file of event.files) {
+      this.uploVideo = file;
+      this.uploadFileToActivityVideo();
+      this.video=file.name
+
+    }
+    alert('Upload Thành Công');
+    // this.uploadFileToActivity();
+  }
+  uploadFileToActivityVideo() {
+    this.networkserviceService.postFileVideo(this.uploVideo).subscribe(data => {
+      // alert('Success');
+      console.log('success');
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  deleteVideo(image6Path) {
+    this.video = null
+  }
 
   deleteImage6(image6Path) {
     this.image6 = null
   }
+
   deleteImage5(image6Path) {
     this.image5 = null
   }

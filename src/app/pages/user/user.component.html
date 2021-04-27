@@ -62,7 +62,20 @@
             <div class=" col-md-4 pr-md-1">
               <div class=" form-group">
                 <label> Video </label>
-                <input class=" form-control" placeholder="Video" [(ngModel)]="video" type="text" />
+                <!-- <input class=" form-control" placeholder="Video" [(ngModel)]="video" type="text" /> -->
+                <p-fileUpload customUpload="true" multiple="multiple" (uploadHandler)="onUploadVideo($event)"
+                accept="video/*" [showUploadButton]="true"></p-fileUpload>
+              <ng-template pTemplate="content">
+                <ul *ngIf="uploadedFiles.length">
+                  <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                </ul>
+              </ng-template>
+              <div style="display: flex;" *ngIf="video != 'null'&& video != null && this.editData.id != null">
+                <label style="margin-left: 50px; margin-right: 120px;margin-top: 20px; text-align: center;">{{videoPathName}}</label>
+                <button style="background-color: orangered;height: 35px; width: 35px; margin-top: 10px" pButton type="button" 
+                  icon="pi pi-trash" class="ui-button-danger"
+                  class="p-button-rounded p-button-text" (click)="deleteVideo(videoPath)"></button>
+              </div>
               </div>
             </div>
 

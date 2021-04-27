@@ -105,4 +105,21 @@ export class NetworkserviceService {
     return this.httpClient.post(url, formData, { headers: headers });
   }
 
+  postFileVideo(filesToUpload: any): Observable<any> {
+    let url = 'http://tonylemobile.com:3000/api/uploadVideo';
+
+    const formData: FormData = new FormData();
+
+    console.log('file.data, file.data.name')
+      console.log(filesToUpload.data, filesToUpload.name)
+      formData.append( 'file',filesToUpload,filesToUpload.name);
+    
+
+    console.log(formData);
+
+    let headers = new HttpHeaders();
+
+    return this.httpClient.post(url, formData, { headers: headers });
+  }
+
 }
