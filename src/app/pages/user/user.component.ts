@@ -284,34 +284,7 @@ export class UserComponent implements OnInit {
 
 
 
-  //   onUpload(event) {
-  //     let formData = new FormData();
-  //     for (let file of event.files) {
-  //       this.fileToUpload = file
-  //         formData.append(this.fileToUpload.name, this.fileToUpload );
-  //         console.log('formData',formData)
-  //     }
 
-
-  //     for (let file of event.files) {
-  //       this.uploadedFiles.push(file);
-  // this.fileToUpload = file
-
-  // console.log('this.fileToUpload',this.fileToUpload)
-  //       this.networkserviceService.postFile(formData).subscribe(
-  //         data => {
-  //           alert("Lưu Thành Công");
-
-  //           console.log("POST Request is successful ", data);
-  //           this.router.navigateByUrl('dashboard')
-
-  //         },
-  //         error => {
-
-  //           console.log("Error", error);
-
-  //         })
-  //     }
 
 
   //     // this.messageService.add({ severity: 'info', summary: 'File Uploaded', detail: '' });

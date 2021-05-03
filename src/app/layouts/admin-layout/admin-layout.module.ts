@@ -27,6 +27,7 @@ import { ChuatracocComponent } from 'src/app/pages/chuatracoc/chuatracoc.compone
 import { WifidoicaplaisimComponent } from 'src/app/pages/wifidoicaplaisim/wifidoicaplaisim.component';
 
 import {FileUploadModule} from 'primeng/fileupload';
+import {ToggleButtonModule} from 'primeng/togglebutton';
 @NgModule({
   imports: [
     CommonModule,
@@ -40,7 +41,8 @@ import {FileUploadModule} from 'primeng/fileupload';
     InputSwitchModule,
     DialogModule,
     DropdownModule,
-    FileUploadModule
+    FileUploadModule,
+    ToggleButtonModule
   ],
   declarations: [
     DashboardComponent,

@@ -11,6 +11,7 @@ export const NETWORK = {
         WiFiTamngung: HOST + 'wifitamngung',
         Detail:HOST+'detail',
         Device:HOST+'device',
-        UpdateDevice:HOST+'updateDevice'
+        UpdateDevice:HOST+'updateDevice',
+        UpdateDeviceStatus:HOST+'updateDeviceStatus'
     }
 };

@@ -46,20 +46,21 @@ export class DashboardComponent implements OnInit {
   remarksRow: any = ''
   summaryRow: any = ''
   videoRow: any = ''
-  idRow:any=''
-deviceUpdate=[]
+  idRow: any = ''
+  deviceUpdate = []
 
-arrayImage = [];
-image1='';
-image2='';
-image3='';
-image4='';
-image5='';
-image6='';
+  arrayImage = [];
+  image1 = '';
+  image2 = '';
+  image3 = '';
+  image4 = '';
+  image5 = '';
+  image6 = '';
+deviceStatus =[];
 
 
   constructor(
-    private networkserviceService: NetworkserviceService, private router:Router
+    private networkserviceService: NetworkserviceService, private router: Router
   ) {
 
   }
@@ -73,6 +74,7 @@ image6='';
       { field: 'price', header: 'Price' },
       { field: 'remarks', header: 'Remarks' },
       { field: 'guarantee', header: 'Guarantee' },
+      { field: 'active', header: 'Active' },
 
     ];
     this.networkserviceService.getAllDevice().subscribe(val =>
@@ -95,38 +97,26 @@ image6='';
 
 
   onChangeCategory(category) {
-    if(category=='all'){
+    if (category == 'all') {
       this.networkserviceService.getAllDevice().subscribe(val =>
 
         this.data = val
-  
+
       )
     }
-    else{
+    else {
       this.networkserviceService.getAllDevice().subscribe(val =>
 
         this.data = val.filter(val => val.category == category)
-  
+
       )
     }
-    
+
   }
 
-  // onRowEditInit(val) {
-  //   this.displayDialog = true;
-  //   this.categoryRow = val.category;
-  //   this.detailsRow = val.details;
-  //   this.guaranteeRow = val.guarantee;
-  //   this.imageRow1 = val.image1 + ',' + val.image2 + ',' + val.image3+ ',' + val.image4+ ',' + val.image5+ ',' + val.image6;
-  //   this.nameRow = val.name;
-  //   this.priceRow = val.price;
-  //   this.remarksRow = val.remarks;
-  //   this.summaryRow = val.summary;
-  //   this.videoRow = val.video;
-  //   this.idRow=val.id;
-  // }
 
-  onRowEditInit(rowData){
+
+  onRowEditInit(rowData) {
     this.router.navigate(['/user'], { state: rowData });
   }
 
@@ -151,46 +141,46 @@ image6='';
   }
 
 
-  save(){
+  save() {
 
     this.arrayImage = this.imageRow1.split(',')
-    if(this.arrayImage[0]){
-      this.image1=this.arrayImage[0]
+    if (this.arrayImage[0]) {
+      this.image1 = this.arrayImage[0]
     }
     else this.image1 = null
-    
-    if(this.arrayImage[1]){
-      this.image2=this.arrayImage[1]
+
+    if (this.arrayImage[1]) {
+      this.image2 = this.arrayImage[1]
     }
     else this.image2 = null
-    
-    if(this.arrayImage[2]){
-      this.image3=this.arrayImage[2]
+
+    if (this.arrayImage[2]) {
+      this.image3 = this.arrayImage[2]
     }
     else this.image3 = null
-    
-    if(this.arrayImage[3]){
-      this.image4=this.arrayImage[3]
+
+    if (this.arrayImage[3]) {
+      this.image4 = this.arrayImage[3]
     }
     else this.image4 = null
-    
-    if(this.arrayImage[4]){
-      this.image5=this.arrayImage[4]
+
+    if (this.arrayImage[4]) {
+      this.image5 = this.arrayImage[4]
     }
     else this.image5 = null
-    
-    if(this.arrayImage[5]){
-      this.image6=this.arrayImage[5]
+
+    if (this.arrayImage[5]) {
+      this.image6 = this.arrayImage[5]
     }
     else this.image6 = null
-    
+
     console.log(this.arrayImage)
 
 
     this.deviceUpdate = [this.categoryRow,
     this.summaryRow,
     this.detailsRow,
-    this.priceRow, this.image1, this.image2, this.videoRow, this.image3, this.image4, this.image5, this.image6, this.nameRow, this.remarksRow, this.guaranteeRow, null,this.idRow
+    this.priceRow, this.image1, this.image2, this.videoRow, this.image3, this.image4, this.image5, this.image6, this.nameRow, this.remarksRow, this.guaranteeRow, null, this.idRow
     ]
     this.networkserviceService.updateAllDevices(this.deviceUpdate).subscribe(
       data => {
@@ -209,7 +199,7 @@ image6='';
     this.displayDialog = false;
   }
 
-  onRowDelete(val,index){
+  onRowDelete(val, index) {
     let isDel = confirm("Bạn có muốn xóa " + val.name + " không?");
     if (isDel == true) {
       this.networkserviceService.deleteDevice(val.id).subscribe(
@@ -224,5 +214,22 @@ image6='';
 
         })
     }
+  }
+
+  handleChangeStatus(rowData) {
+    console.log("rowData", rowData)
+    this.deviceStatus = [rowData.active,rowData.id]
+    console.log(this.deviceStatus)
+    this.networkserviceService.updateDeviceStatus(this.deviceStatus).subscribe(
+      data => {
+        alert("Lưu Thành Công");
+
+        console.log("POST Request is successful ", data);
+      },
+      error => {
+
+        console.log("Error", error);
+
+      })
   }
 }
