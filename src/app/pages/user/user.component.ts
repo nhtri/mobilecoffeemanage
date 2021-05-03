@@ -36,7 +36,7 @@ export class UserComponent implements OnInit {
   email = '';
   device = [];
   arrayImage = [];
-  arrayVideo=''
+  arrayVideo = ''
   image1 = '';
   image1Path = '';
   image1PathName = '';
@@ -76,7 +76,8 @@ export class UserComponent implements OnInit {
       { label: 'Iphone New', value: 'iphone_new' },
       { label: 'Macbook New', value: 'macbook_new' },
       { label: 'Sim Data Wifi New', value: 'sim_data_wifi_new' },
-      { label: 'Apple watch New', value: 'apple_watch_new' }
+      { label: 'Apple watch New', value: 'apple_watch_new' },
+      { label: 'Dien thoai cu', value: 'dienthoaicu' }
     ]
 
 
@@ -147,8 +148,8 @@ export class UserComponent implements OnInit {
         if (this.image4) this.arrayImage.push(this.image4.replace('./assets/images/', ''))
         if (this.image5) this.arrayImage.push(this.image5.replace('./assets/images/', ''))
         if (this.image6) this.arrayImage.push(this.image6.replace('./assets/images/', ''))
-      
-    
+
+
 
         if (this.arrayImage[0]) {
           this.image1 = './assets/images/' + this.arrayImage[0]
@@ -179,7 +180,7 @@ export class UserComponent implements OnInit {
           this.image6 = './assets/images/' + this.arrayImage[5]
         }
         else this.image6 = null
- 
+
       }
 
       this.deviceUpdate = [this.editData.category,
@@ -314,7 +315,7 @@ export class UserComponent implements OnInit {
     for (let file of event.files) {
       this.uploVideo = file;
       this.uploadFileToActivityVideo();
-      this.video=file.name
+      this.video = file.name
 
     }
     alert('Upload Thành Công');

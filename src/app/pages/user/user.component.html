@@ -64,18 +64,19 @@
                 <label> Video </label>
                 <!-- <input class=" form-control" placeholder="Video" [(ngModel)]="video" type="text" /> -->
                 <p-fileUpload customUpload="true" multiple="multiple" (uploadHandler)="onUploadVideo($event)"
-                accept="video/*" [showUploadButton]="true"></p-fileUpload>
-              <ng-template pTemplate="content">
-                <ul *ngIf="uploadedFiles.length">
-                  <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
-                </ul>
-              </ng-template>
-              <div style="display: flex;" *ngIf="video != 'null'&& video != null && this.editData.id != null">
-                <label style="margin-left: 50px; margin-right: 120px;margin-top: 20px; text-align: center;">{{videoPathName}}</label>
-                <button style="background-color: orangered;height: 35px; width: 35px; margin-top: 10px" pButton type="button" 
-                  icon="pi pi-trash" class="ui-button-danger"
-                  class="p-button-rounded p-button-text" (click)="deleteVideo(videoPath)"></button>
-              </div>
+                  accept="video/*" [showUploadButton]="true"></p-fileUpload>
+                <ng-template pTemplate="content">
+                  <ul *ngIf="uploadedFiles.length">
+                    <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                  </ul>
+                </ng-template>
+                <div style="display: flex;" *ngIf="video != 'null'&& video != null && this.editData.id != null">
+                  <label
+                    style="margin-left: 50px; margin-right: 120px;margin-top: 20px; text-align: center;">{{videoPathName}}</label>
+                  <button style="background-color: orangered;height: 35px; width: 35px; margin-top: 10px" pButton
+                    type="button" icon="pi pi-trash" class="ui-button-danger" class="p-button-rounded p-button-text"
+                    (click)="deleteVideo(videoPath)"></button>
+                </div>
               </div>
             </div>
 
@@ -104,52 +105,52 @@
                   </ul>
                 </ng-template>
                 <div style="display: flex;" *ngIf="image1 != 'null'&& image1 != null && this.editData.id != null">
-                  <img [src]="image1Path" 
-                    style="height: 40px; width: 40px; margin-top: 10px;margin-left: 25px;">
-                  <label style="margin-left: 50px; margin-right: 120px;margin-top: 20px; text-align: center;">{{image1PathName}}</label>
-                  <button style="background-color: orangered;height: 35px; width: 35px; margin-top: 10px" pButton type="button" 
-                    icon="pi pi-trash" class="ui-button-danger"
-                    class="p-button-rounded p-button-text" (click)="deleteImage1(image1Path)"></button>
+                  <img [src]="image1Path" style="height: 40px; width: 40px; margin-top: 10px;margin-left: 25px;">
+                  <label
+                    style="margin-left: 50px; margin-right: 120px;margin-top: 20px; text-align: center;">{{image1PathName}}</label>
+                  <button style="background-color: orangered;height: 35px; width: 35px; margin-top: 10px" pButton
+                    type="button" icon="pi pi-trash" class="ui-button-danger" class="p-button-rounded p-button-text"
+                    (click)="deleteImage1(image1Path)"></button>
                 </div>
                 <div style="display: flex;" *ngIf="image2 != 'null' && image2 != null && this.editData.id != null">
-                  <img [src]="image2Path" 
-                    style="height: 40px; width: 40px; margin-top: 10px;margin-left: 25px;">
-                  <label style="margin-left: 50px; margin-right: 120px;margin-top: 20px; text-align: center;">{{image2PathName}}</label>
-                  <button style="background-color: orangered;height: 35px; width: 35px; margin-top: 10px" pButton type="button" 
-                    icon="pi pi-trash" class="ui-button-danger"
-                    class="p-button-rounded p-button-text" (click)="deleteImage2(image2Path)"></button>
+                  <img [src]="image2Path" style="height: 40px; width: 40px; margin-top: 10px;margin-left: 25px;">
+                  <label
+                    style="margin-left: 50px; margin-right: 120px;margin-top: 20px; text-align: center;">{{image2PathName}}</label>
+                  <button style="background-color: orangered;height: 35px; width: 35px; margin-top: 10px" pButton
+                    type="button" icon="pi pi-trash" class="ui-button-danger" class="p-button-rounded p-button-text"
+                    (click)="deleteImage2(image2Path)"></button>
                 </div>
                 <div style="display: flex;" *ngIf="image3 != 'null'&& image3 != null && this.editData.id != null">
-                  <img [src]="image3Path" 
-                    style="height: 40px; width: 40px; margin-top: 10px;margin-left: 25px;">
-                  <label style="margin-left: 50px; margin-right: 120px;margin-top: 20px; text-align: center;">{{image3PathName}}</label>
-                  <button style="background-color: orangered;height: 35px; width: 35px; margin-top: 10px" pButton type="button" 
-                    icon="pi pi-trash" class="ui-button-danger"
-                    class="p-button-rounded p-button-text" (click)="deleteImage3(image3Path)"></button>
+                  <img [src]="image3Path" style="height: 40px; width: 40px; margin-top: 10px;margin-left: 25px;">
+                  <label
+                    style="margin-left: 50px; margin-right: 120px;margin-top: 20px; text-align: center;">{{image3PathName}}</label>
+                  <button style="background-color: orangered;height: 35px; width: 35px; margin-top: 10px" pButton
+                    type="button" icon="pi pi-trash" class="ui-button-danger" class="p-button-rounded p-button-text"
+                    (click)="deleteImage3(image3Path)"></button>
                 </div>
                 <div style="display: flex;" *ngIf="image4 != 'null' && image4 != null && this.editData.id != null">
-                  <img [src]="image4Path" 
-                    style="height: 40px; width: 40px; margin-top: 10px;margin-left: 25px;">
-                  <label style="margin-left: 50px; margin-right: 120px;margin-top: 20px; text-align: center;">{{image4PathName}}</label>
-                  <button style="background-color: orangered;height: 35px; width: 35px; margin-top: 10px" pButton type="button" 
-                    icon="pi pi-trash" class="ui-button-danger"
-                    class="p-button-rounded p-button-text" (click)="deleteImage4(image4Path)"></button>
+                  <img [src]="image4Path" style="height: 40px; width: 40px; margin-top: 10px;margin-left: 25px;">
+                  <label
+                    style="margin-left: 50px; margin-right: 120px;margin-top: 20px; text-align: center;">{{image4PathName}}</label>
+                  <button style="background-color: orangered;height: 35px; width: 35px; margin-top: 10px" pButton
+                    type="button" icon="pi pi-trash" class="ui-button-danger" class="p-button-rounded p-button-text"
+                    (click)="deleteImage4(image4Path)"></button>
                 </div>
                 <div style="display: flex;" *ngIf="image5 != 'null' && image5 != null && this.editData.id != null">
-                  <img [src]="image5Path" 
-                    style="height: 40px; width: 40px; margin-top: 10px;margin-left: 25px;">
-                  <label style="margin-left: 50px; margin-right: 120px;margin-top: 20px; text-align: center;">{{image5PathName}}</label>
-                  <button style="background-color: orangered;height: 35px; width: 35px; margin-top: 10px" pButton type="button" 
-                    icon="pi pi-trash" class="ui-button-danger"
-                    class="p-button-rounded p-button-text" (click)="deleteImage5(image5Path)"></button>
+                  <img [src]="image5Path" style="height: 40px; width: 40px; margin-top: 10px;margin-left: 25px;">
+                  <label
+                    style="margin-left: 50px; margin-right: 120px;margin-top: 20px; text-align: center;">{{image5PathName}}</label>
+                  <button style="background-color: orangered;height: 35px; width: 35px; margin-top: 10px" pButton
+                    type="button" icon="pi pi-trash" class="ui-button-danger" class="p-button-rounded p-button-text"
+                    (click)="deleteImage5(image5Path)"></button>
                 </div>
                 <div style="display: flex;" *ngIf="image6 != 'null' && image6 != null && this.editData.id != null">
-                  <img [src]="image6Path" 
-                    style="height: 40px; width: 40px; margin-top: 10px;margin-left: 25px;">
-                  <label style="margin-left: 50px; margin-right: 120px;margin-top: 20px; text-align: center;">{{image6PathName}}</label>
-                  <button style="background-color: orangered;height: 35px; width: 35px; margin-top: 10px" pButton type="button" 
-                    icon="pi pi-trash" class="ui-button-danger"
-                    class="p-button-rounded p-button-text" (click)="deleteImage6(image6Path)"></button>
+                  <img [src]="image6Path" style="height: 40px; width: 40px; margin-top: 10px;margin-left: 25px;">
+                  <label
+                    style="margin-left: 50px; margin-right: 120px;margin-top: 20px; text-align: center;">{{image6PathName}}</label>
+                  <button style="background-color: orangered;height: 35px; width: 35px; margin-top: 10px" pButton
+                    type="button" icon="pi pi-trash" class="ui-button-danger" class="p-button-rounded p-button-text"
+                    (click)="deleteImage6(image6Path)"></button>
                 </div>
               </div>
             </div>
@@ -177,36 +178,7 @@
         </div>
       </div>
     </div>
-    <!-- <div class=" col-md-4">
-      <div class=" card card-user">
-        <div class=" card-body">
-          <p class=" card-text"></p>
-          <div class=" author">
-            <div class=" block block-one"></div>
-            <div class=" block block-two"></div>
 
-
-            <a href="javascript:void(0)">
-              <img />
-
-              <h4 class=" title">Họ Tên: {{hoten}}</h4>
-            </a>
-
-          </div>
-          <div class=" card-description">
-            Ghi Chú: {{ghichu}}
-          </div>
-        </div>
-        <div class=" card-footer">
-          <div class=" button-container">
-            <button class=" btn btn-icon btn-round btn-facebook">
-              <a class=" fab fa-facebook" href="{{facebook}}"> </a>
-            </button>
-
-          </div>
-        </div>
-      </div>
-    </div> -->
   </div>
 
 </div>
