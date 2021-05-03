@@ -152,6 +152,39 @@
                     type="button" icon="pi pi-trash" class="ui-button-danger" class="p-button-rounded p-button-text"
                     (click)="deleteImage6(image6Path)"></button>
                 </div>
+                <div style="display: flex;" *ngIf="image7 != 'null' && image7 != null && this.editData.id != null">
+                  <img [src]="image7Path" style="height: 40px; width: 40px; margin-top: 10px;margin-left: 25px;">
+                  <label
+                    style="margin-left: 50px; margin-right: 120px;margin-top: 20px; text-align: center;">{{image7PathName}}</label>
+                  <button style="background-color: orangered;height: 35px; width: 35px; margin-top: 10px" pButton
+                    type="button" icon="pi pi-trash" class="ui-button-danger" class="p-button-rounded p-button-text"
+                    (click)="deleteImage7(image7Path)"></button>
+                </div>
+                <div style="display: flex;" *ngIf="image8 != 'null' && image8 != null && this.editData.id != null">
+                  <img [src]="image8Path" style="height: 40px; width: 40px; margin-top: 10px;margin-left: 25px;">
+                  <label
+                    style="margin-left: 50px; margin-right: 120px;margin-top: 20px; text-align: center;">{{image8PathName}}</label>
+                  <button style="background-color: orangered;height: 35px; width: 35px; margin-top: 10px" pButton
+                    type="button" icon="pi pi-trash" class="ui-button-danger" class="p-button-rounded p-button-text"
+                    (click)="deleteImage8(image8Path)"></button>
+                </div>
+                <div style="display: flex;" *ngIf="image9 != 'null' && image9 != null && this.editData.id != null">
+                  <img [src]="image9Path" style="height: 40px; width: 40px; margin-top: 10px;margin-left: 25px;">
+                  <label
+                    style="margin-left: 50px; margin-right: 120px;margin-top: 20px; text-align: center;">{{image9PathName}}</label>
+                  <button style="background-color: orangered;height: 35px; width: 35px; margin-top: 10px" pButton
+                    type="button" icon="pi pi-trash" class="ui-button-danger" class="p-button-rounded p-button-text"
+                    (click)="deleteImage9(image9Path)"></button>
+                </div>
+                <div style="display: flex;" *ngIf="image10 != 'null' && image10 != null && this.editData.id != null">
+                  <img [src]="image10Path" style="height: 40px; width: 40px; margin-top: 10px;margin-left: 25px;">
+                  <label
+                    style="margin-left: 50px; margin-right: 120px;margin-top: 20px; text-align: center;">{{image10PathName}}</label>
+                  <button style="background-color: orangered;height: 35px; width: 35px; margin-top: 10px" pButton
+                    type="button" icon="pi pi-trash" class="ui-button-danger" class="p-button-rounded p-button-text"
+                    (click)="deleteImage10(image10Path)"></button>
+                </div>
+
               </div>
             </div>
 

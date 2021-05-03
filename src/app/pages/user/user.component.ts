@@ -55,6 +55,18 @@ export class UserComponent implements OnInit {
   image6 = '';
   image6Path = '';
   image6PathName = '';
+  image7 = '';
+  image7Path = '';
+  image7PathName = '';
+  image8 = '';
+  image8Path = '';
+  image8PathName = '';
+  image9 = '';
+  image9Path = '';
+  image9PathName = '';
+  image10 = '';
+  image10Path = '';
+  image10PathName = '';
 
   uploadedFiles: any[] = [];
   fileToUpload: File = null;
@@ -120,6 +132,18 @@ export class UserComponent implements OnInit {
       this.image6 = this.editData.image6
       this.image6Path = 'http://tonylemobile.com' + this.image6
       this.image6PathName = this.image6Path.replace('http://tonylemobile.com./assets/images/', '')
+      this.image7 = this.editData.image7
+      this.image7Path = 'http://tonylemobile.com' + this.image7
+      this.image7PathName = this.image6Path.replace('http://tonylemobile.com./assets/images/', '')
+      this.image8 = this.editData.image8
+      this.image8Path = 'http://tonylemobile.com' + this.image8
+      this.image8PathName = this.image8Path.replace('http://tonylemobile.com./assets/images/', '')
+      this.image9 = this.editData.image9
+      this.image9Path = 'http://tonylemobile.com' + this.image9
+      this.image9PathName = this.image9Path.replace('http://tonylemobile.com./assets/images/', '')
+      this.image10 = this.editData.image10
+      this.image10Path = 'http://tonylemobile.com' + this.image10
+      this.image10PathName = this.image10Path.replace('http://tonylemobile.com./assets/images/', '')
     }
     else {
       this.selectedCategory = 'air_pods_new';
@@ -148,6 +172,10 @@ export class UserComponent implements OnInit {
         if (this.image4) this.arrayImage.push(this.image4.replace('./assets/images/', ''))
         if (this.image5) this.arrayImage.push(this.image5.replace('./assets/images/', ''))
         if (this.image6) this.arrayImage.push(this.image6.replace('./assets/images/', ''))
+        if (this.image7) this.arrayImage.push(this.image7.replace('./assets/images/', ''))
+        if (this.image8) this.arrayImage.push(this.image8.replace('./assets/images/', ''))
+        if (this.image9) this.arrayImage.push(this.image9.replace('./assets/images/', ''))
+        if (this.image10) this.arrayImage.push(this.image10.replace('./assets/images/', ''))
 
 
 
@@ -181,12 +209,32 @@ export class UserComponent implements OnInit {
         }
         else this.image6 = null
 
+        if (this.arrayImage[6]) {
+          this.image7 = './assets/images/' + this.arrayImage[6]
+        }
+        else this.image7 = null
+
+        if (this.arrayImage[7]) {
+          this.image8 = './assets/images/' + this.arrayImage[7]
+        }
+        else this.image8 = null
+
+        if (this.arrayImage[8]) {
+          this.image9 = './assets/images/' + this.arrayImage[8]
+        }
+        else this.image9 = null
+
+        if (this.arrayImage[9]) {
+          this.image10 = './assets/images/' + this.arrayImage[9]
+        }
+        else this.image10 = null
+
       }
 
       this.deviceUpdate = [this.editData.category,
       this.summary,
       this.details,
-      this.price, this.image1, this.image2, this.video, this.image3, this.image4, this.image5, this.image6, this.name, this.remarks, this.guarantee, null, this.editData.id
+      this.price, this.image1, this.image2, this.video, this.image3, this.image4, this.image5, this.image6, this.name, this.remarks, this.guarantee, null,this.editData.active,this.image7,this.image8,this.image9,this.image10, this.editData.id
       ]
       this.networkserviceService.updateAllDevices(this.deviceUpdate).subscribe(
         data => {
@@ -233,6 +281,26 @@ export class UserComponent implements OnInit {
       }
       else this.image6 = null
 
+      if (this.arrayImage[6]) {
+        this.image7 = './assets/images/' + this.arrayImage[6]
+      }
+      else this.image7 = null
+
+      if (this.arrayImage[7]) {
+        this.image8 = './assets/images/' + this.arrayImage[7]
+      }
+      else this.image8 = null
+
+      if (this.arrayImage[8]) {
+        this.image9 = './assets/images/' + this.arrayImage[8]
+      }
+      else this.image9 = null
+
+      if (this.arrayImage[9]) {
+        this.image10 = './assets/images/' + this.arrayImage[9]
+      }
+      else this.image10 = null
+
       console.log(this.arrayImage)
       this.device = [
         this.category,
@@ -250,7 +318,12 @@ export class UserComponent implements OnInit {
         this.name,
         this.remarks,
         this.guarantee,
-        this.email
+        this.email,
+        true,
+        this.image7,
+        this.image8,
+        this.image9,
+        this.image10
       ]
       console.log(this.device)
 
@@ -334,23 +407,39 @@ export class UserComponent implements OnInit {
     this.video = null
   }
 
+  deleteImage10(image10Path) {
+    this.image10 = null
+  }
+
+  deleteImage9(image9Path) {
+    this.image9 = null
+  }
+
+  deleteImage8(image8Path) {
+    this.image8 = null
+  }
+
+  deleteImage7(image7Path) {
+    this.image7 = null
+  }
+
   deleteImage6(image6Path) {
     this.image6 = null
   }
 
-  deleteImage5(image6Path) {
+  deleteImage5(image5Path) {
     this.image5 = null
   }
-  deleteImage4(image6Path) {
+  deleteImage4(image4Path) {
     this.image4 = null
   }
-  deleteImage3(image6Path) {
+  deleteImage3(image3Path) {
     this.image3 = null
   }
-  deleteImage2(image6Path) {
+  deleteImage2(image2Path) {
     this.image2 = null
   }
-  deleteImage1(image6Path) {
+  deleteImage1(image1Path) {
     this.image1 = null
   }
 
