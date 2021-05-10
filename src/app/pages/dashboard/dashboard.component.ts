@@ -51,6 +51,8 @@ export class DashboardComponent implements OnInit {
   idRow: any = ''
   deviceUpdate = []
 
+  noRow: any = null
+
   arrayImage = [];
   image1 = '';
   image2 = '';
@@ -77,6 +79,7 @@ deviceStatus =[];
       { field: 'remarks', header: 'Remarks' },
       { field: 'guarantee', header: 'Guarantee' },
       { field: 'active', header: 'Active' },
+      { field: 'no', header: 'No' },
 
     ];
     this.networkserviceService.getAllDevice().subscribe(val =>
@@ -182,7 +185,7 @@ deviceStatus =[];
     this.deviceUpdate = [this.categoryRow,
     this.summaryRow,
     this.detailsRow,
-    this.priceRow, this.image1, this.image2, this.videoRow, this.image3, this.image4, this.image5, this.image6, this.nameRow, this.remarksRow, this.guaranteeRow, null, this.idRow
+    this.priceRow, this.image1, this.image2, this.videoRow, this.image3, this.image4, this.image5, this.image6, this.nameRow, this.remarksRow, this.guaranteeRow, null, this.noRow ,this.idRow
     ]
     this.networkserviceService.updateAllDevices(this.deviceUpdate).subscribe(
       data => {
