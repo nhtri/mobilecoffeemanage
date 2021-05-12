@@ -6,6 +6,7 @@ import { from } from 'rxjs';
 import * as XLSX from 'xlsx';
 import * as FileSaver from 'file-saver';
 import { Router } from "@angular/router";
+import { flattenDiagnosticMessageChain } from "@angular/compiler-cli";
 
 @Component({
   selector: "app-dashboard",
@@ -25,6 +26,13 @@ export class DashboardComponent implements OnInit {
     { label: 'Sim Data Wifi New', value: 'sim_data_wifi_new' },
     { label: 'Apple watch New', value: 'apple_watch_new' },
     { label: 'Dien thoai cu', value: 'dienthoaicu' }
+  ]
+
+  trangthaiactive = [
+    { label: 'All', value: 'all' },
+    { label: 'Đang Bán', value: 'ban' },
+    { label: 'Ngưng bán', value: 'ngungban' }
+   
   ]
 
   category = [
@@ -236,5 +244,30 @@ deviceStatus =[];
         console.log("Error", error);
 
       })
+  }
+
+  onChangeActive(trangthai) {
+    if (trangthai == 'all') {
+      this.networkserviceService.getAllDevice().subscribe(val =>
+
+        this.data = val
+
+      )
+    }
+    else if (trangthai == 'ban') {
+      this.networkserviceService.getAllDevice().subscribe(val =>
+
+        this.data = val.filter(val => val.active == true)
+
+      )
+    }
+    else if (trangthai == 'ngungban') {
+      this.networkserviceService.getAllDevice().subscribe(val =>
+
+        this.data = val.filter(val => val.active == false)
+
+      )
+    }
+
   }
 }

@@ -29,13 +29,13 @@ export const ROUTES: RouteInfo[] = [
   //   icon: "icon-atom",
   //   class: ""
   // },
-  // {
-  //   path: "/icons",
-  //   title: "Icons",
-  //   rtlTitle: "الرموز",
-  //   icon: "icon-atom",
-  //   class: ""
-  // },
+  {
+    path: "/icons",
+    title: "DS ngừng bán",
+    // rtlTitle: "الرموز",
+    icon: "icon-atom",
+    class: ""
+  },
   // {
   //   path: "/maps",
   //   title: "Maps",

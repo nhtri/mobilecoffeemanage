@@ -9,7 +9,9 @@
         <div class=" card-body">
           <button type="button" pButton icon="pi pi-file-excel" iconPos="left" label="EXCEL" (click)="exportExcel()"
             style="margin-right: 15px; margin-bottom: 15px;" class="ui-button-success"></button>
-          <p-dropdown [options]="trangthaitt" (onChange)="onChangeCategory($event.value)"></p-dropdown>
+          <p-dropdown [options]="trangthaitt" (onChange)="onChangeCategory($event.value)" ></p-dropdown>
+          <label style="margin-right: 20px;"> </label>
+          <!-- <p-dropdown [options]="trangthaiactive" (onChange)="onChangeActive($event.value)"></p-dropdown> -->
           <p-table dataKey="id" editMode="row" #tt [columns]="cols" [value]="data" [paginator]="true" [rows]="20"
             [tableStyle]="{'table-layout':'auto'}" (onRowSelect)="onRowSelect($event)"
             (onHeaderCheckboxToggle)="onTableHeaderCheckboxToggle($event)" (onRowUnselect)="onRowUnselect($event)">
