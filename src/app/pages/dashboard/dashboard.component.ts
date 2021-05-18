@@ -6,7 +6,6 @@ import { from } from 'rxjs';
 import * as XLSX from 'xlsx';
 import * as FileSaver from 'file-saver';
 import { Router } from "@angular/router";
-import { flattenDiagnosticMessageChain } from "@angular/compiler-cli";
 
 @Component({
   selector: "app-dashboard",
@@ -25,6 +24,9 @@ export class DashboardComponent implements OnInit {
     { label: 'Macbook New', value: 'macbook_new' },
     { label: 'Sim Data Wifi New', value: 'sim_data_wifi_new' },
     { label: 'Apple watch New', value: 'apple_watch_new' },
+    { label: 'Android', value: 'android' },
+    { label: 'Phụ kiện', value: 'phukien' },
+    { label: 'Sản phẩm khác', value: 'sanphamkhac' },
     { label: 'Dien thoai cu', value: 'dienthoaicu' }
   ]
 
@@ -42,6 +44,9 @@ export class DashboardComponent implements OnInit {
     { label: 'Macbook New', value: 'macbook_new' },
     { label: 'Sim Data Wifi New', value: 'sim_data_wifi_new' },
     { label: 'Apple watch New', value: 'apple_watch_new' },
+    { label: 'Android', value: 'android' },
+    { label: 'Phụ kiện', value: 'phukien' },
+    { label: 'Sản phẩm khác', value: 'sanphamkhac' },
     { label: 'Dien thoai cu', value: 'dienthoaicu' }
   ]
 
@@ -82,13 +87,15 @@ deviceStatus =[];
       { field: 'category', header: 'Category' },
       { field: 'name', header: 'Name' },
       { field: 'summary', header: 'Summary' },
-      { field: 'details', header: 'Details' },
+      // { field: 'details', header: 'Details' },
       { field: 'price', header: 'Price' },
       { field: 'remarks', header: 'Remarks' },
       { field: 'guarantee', header: 'Guarantee' },
       { field: 'active', header: 'Active' },
       { field: 'no', header: 'No' },
-
+      { field: 'new', header: 'New' },
+      { field: 'khuyenmai', header: 'Khuyenmai' },
+      { field: 'giamoi', header: 'Giamoi' },
     ];
     this.networkserviceService.getAllDevice().subscribe(val =>
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NetworkserviceService } from 'src/app/services/networkservice.service';
 import { Router } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup } from "@angular/forms";
 
 interface Category {
   label: string,
@@ -19,6 +20,7 @@ export class UserComponent implements OnInit {
 
   editData: any
   deviceUpdate = []
+  danhmucform: FormGroup | any;
   categories: Category[];
   selectedCategory: any;
   // selectedCategory: string = 'air_pods_new';
@@ -78,7 +80,7 @@ export class UserComponent implements OnInit {
   data: any
 
   constructor(
-
+    private formBuilder: FormBuilder,
     private networkserviceService: NetworkserviceService,
     private router: Router
   ) {
@@ -90,16 +92,22 @@ export class UserComponent implements OnInit {
       { label: 'Macbook New', value: 'macbook_new' },
       { label: 'Sim Data Wifi New', value: 'sim_data_wifi_new' },
       { label: 'Apple watch New', value: 'apple_watch_new' },
+      { label: 'Android', value: 'android' },
+      { label: 'Phụ kiện', value: 'phukien' },
+      { label: 'Sản phẩm khác', value: 'sanphamkhac' },
       { label: 'Dien thoai cu', value: 'dienthoaicu' }
     ]
-
+    this.initForm()
 
   }
+
+ 
 
   ngOnInit() {
 
     console.log('this.editData', this.editData)
     if (this.editData.id) {
+      this.danhmucform.controls['danhmucspform'].value=this.editData.category
       this.selectedCategory = this.editData.category
       this.category = this.editData.category
       this.name = this.editData.name
@@ -153,9 +161,10 @@ export class UserComponent implements OnInit {
   }
 
   initForm() {
+    this.danhmucform = this.formBuilder.group({
+      danhmucspform: new FormControl(null)
 
-
-
+    })
   }
 
   onFormChanges() {
@@ -233,7 +242,7 @@ export class UserComponent implements OnInit {
 
       }
 
-      this.deviceUpdate = [this.editData.category,
+      this.deviceUpdate = [this.danhmucform.get('danhmucspform').value,
       this.summary,
       this.details,
       this.price, this.image1, this.image2, this.video, this.image3, this.image4, this.image5, this.image6, this.name, this.remarks, this.guarantee, null,this.editData.active,this.image7,this.image8,this.image9,this.image10,this.no, this.editData.id

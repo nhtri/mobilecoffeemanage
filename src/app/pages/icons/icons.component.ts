@@ -19,6 +19,9 @@ export class IconsComponent implements OnInit {
     { label: 'Macbook New', value: 'macbook_new' },
     { label: 'Sim Data Wifi New', value: 'sim_data_wifi_new' },
     { label: 'Apple watch New', value: 'apple_watch_new' },
+    { label: 'Android', value: 'android' },
+    { label: 'Phụ kiện', value: 'phukien' },
+    { label: 'Sản phẩm khác', value: 'sanphamkhac' },
     { label: 'Dien thoai cu', value: 'dienthoaicu' }
   ]
 
@@ -36,6 +39,9 @@ export class IconsComponent implements OnInit {
     { label: 'Macbook New', value: 'macbook_new' },
     { label: 'Sim Data Wifi New', value: 'sim_data_wifi_new' },
     { label: 'Apple watch New', value: 'apple_watch_new' },
+    { label: 'Android', value: 'android' },
+    { label: 'Phụ kiện', value: 'phukien' },
+    { label: 'Sản phẩm khác', value: 'sanphamkhac' },
     { label: 'Dien thoai cu', value: 'dienthoaicu' }
   ]
 
