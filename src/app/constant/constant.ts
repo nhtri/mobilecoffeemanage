@@ -12,6 +12,7 @@ export const NETWORK = {
         Detail:HOST+'detail',
         Device:HOST+'device',
         UpdateDevice:HOST+'updateDevice',
-        UpdateDeviceStatus:HOST+'updateDeviceStatus'
+        UpdateDeviceStatus:HOST+'updateDeviceStatus',
+        UpdateDeviceNew:HOST+'updateDeviceNew'
     }
 };

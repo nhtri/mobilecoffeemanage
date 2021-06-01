@@ -61,7 +61,7 @@
                   </ng-container>
 
                   <ng-container *ngIf="[col.field]=='new'">
-                    <p-toggleButton (onChange)="handleChangeStatus(rowData)" onLabel="" offLabel=""
+                    <p-toggleButton (onChange)="handleChangeNew(rowData)" onLabel="" offLabel=""
                     [(ngModel)]="rowData[col.field]" onIcon="pi pi-check" offIcon="pi pi-times"></p-toggleButton>
                     <!-- {{rowData[col.field]}} -->
                   </ng-container>

@@ -256,6 +256,23 @@ deviceStatus =[];
       })
   }
 
+  handleChangeNew(rowData) {
+    console.log("rowData", rowData)
+    this.deviceStatus = [rowData.new,rowData.id]
+    console.log(this.deviceStatus)
+    this.networkserviceService.updateDeviceStatus(this.deviceStatus).subscribe(
+      data => {
+        alert("Lưu Thành Công");
+
+        console.log("POST Request is successful ", data);
+      },
+      error => {
+
+        console.log("Error", error);
+
+      })
+  }
+
   onChangeActive(trangthai) {
     if (trangthai == 'all') {
       this.networkserviceService.getAllDevice().subscribe(val =>

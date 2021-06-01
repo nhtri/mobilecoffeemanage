@@ -81,6 +81,11 @@ export class NetworkserviceService {
     return this.httpClient.put<any>(UpdateDeviceStatusAPI, data, this.httpOptions)
   }
 
+  updateDeviceNew(data): Observable<any> {
+    const UpdateDeviceStatusAPI = `${NETWORK.API.UpdateDeviceNew}`;
+    return this.httpClient.put<any>(UpdateDeviceStatusAPI, data, this.httpOptions)
+  }
+
   // postFile(fileToUpload): Observable<any> {
   //   const endpoint = `http://tonylemobile.com:3000/api/upload`;
    
