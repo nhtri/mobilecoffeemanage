@@ -76,6 +76,7 @@ export class DashboardComponent implements OnInit {
   image5 = '';
   image6 = '';
 deviceStatus =[];
+deviceNew =[];
 
 
   constructor(
@@ -258,9 +259,9 @@ deviceStatus =[];
 
   handleChangeNew(rowData) {
     console.log("rowData", rowData)
-    this.deviceStatus = [rowData.new,rowData.id]
-    console.log(this.deviceStatus)
-    this.networkserviceService.updateDeviceStatus(this.deviceStatus).subscribe(
+    this.deviceNew = [rowData.new,rowData.id]
+    console.log(this.deviceNew)
+    this.networkserviceService.updateDeviceNew(this.deviceNew).subscribe(
       data => {
         alert("Lưu Thành Công");
 
