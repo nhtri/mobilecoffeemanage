@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
     { label: 'Air Pods', value: 'air_pods_new' },
     { label: 'Ipad New', value: 'ipad_new' },
     { label: 'Iphone New', value: 'iphone_new' },
-    { label: 'Macbook New', value: 'macbook_new' },
+    { label: 'Macbook Air', value: 'macbook_new' },
     { label: 'Macbook Pro', value: 'macbookpro' },
     { label: 'Sim Data Wifi New', value: 'sim_data_wifi_new' },
     { label: 'Apple watch New', value: 'apple_watch_new' },
@@ -101,7 +101,8 @@ deviceStatus =[];
     ];
     this.networkserviceService.getAllDevice().subscribe(val =>
 
-      this.data = val
+      // this.data = val
+      this.data = val.filter(val=>val.active == true)
 
     )
 
