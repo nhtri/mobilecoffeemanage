@@ -29,6 +29,7 @@ export class UserComponent implements OnInit {
   no = null;
   details = '';
   price = '';
+  giamoi='';
   image = '';
   video = '';
   videoPath = '';
@@ -117,6 +118,7 @@ export class UserComponent implements OnInit {
       this.summary = this.editData.summary
       this.no = this.editData.no
       this.price = this.editData.price
+      this.giamoi = this.editData.giamoi
       this.guarantee = this.editData.guarantee
       this.details = this.editData.details
       this.video = this.editData.video
@@ -246,7 +248,7 @@ export class UserComponent implements OnInit {
       this.deviceUpdate = [this.danhmucform.get('danhmucspform').value,
       this.summary,
       this.details,
-      this.price, this.image1, this.image2, this.video, this.image3, this.image4, this.image5, this.image6, this.name, this.remarks, this.guarantee, null,this.editData.active,this.image7,this.image8,this.image9,this.image10,this.no, this.editData.id
+      this.price, this.image1, this.image2, this.video, this.image3, this.image4, this.image5, this.image6, this.name, this.remarks, this.guarantee, null,this.editData.active,this.image7,this.image8,this.image9,this.image10,this.no, this.giamoi, this.editData.id
       ]
       this.networkserviceService.updateAllDevices(this.deviceUpdate).subscribe(
         data => {
@@ -336,6 +338,7 @@ export class UserComponent implements OnInit {
         this.image8,
         this.image9,
         this.image10,
+        this.giamoi,
         this.no
       ]
       console.log(this.device)

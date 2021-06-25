@@ -60,6 +60,7 @@ export class DashboardComponent implements OnInit {
   imageRow1: any = ''
   nameRow: any = ''
   priceRow: any = ''
+  giamoiRow: any = ''
   remarksRow: any = ''
   summaryRow: any = ''
   videoRow: any = ''
@@ -97,7 +98,6 @@ deviceNew =[];
       { field: 'active', header: 'Active' },
       { field: 'no', header: 'No' },
       { field: 'new', header: 'New' },
-      { field: 'khuyenmai', header: 'Khuyenmai' },
       { field: 'giamoi', header: 'Giamoi' },
     ];
     this.networkserviceService.getAllDevice().subscribe(val =>
