@@ -339,7 +339,7 @@ export class UserComponent implements OnInit {
         this.image9,
         this.image10,
         this.no,
-        this.giamoi
+        // this.giamoi
       ]
       console.log(this.device)
 
